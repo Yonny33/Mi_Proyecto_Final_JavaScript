@@ -32,7 +32,7 @@ $(document).ready(function () {
     });
 
     //Crea un string que contenga el HTML que describe el detalle del evento
-    var html = `<h2>Eventos Pasados</h2>`
+    var html = ""
 
     //Recorre el arreglo y concatena el HTML para cada evento
         for (var j = 0; j < pasados.length; j++){
