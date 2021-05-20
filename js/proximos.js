@@ -12,9 +12,11 @@ $(document).ready(function () {
     url: "info.json"
     }).done(function (resultado) {
 
+
     //Guarda el resultado en variables
-    hoy = resultado.fechaActual;
-    eventos = resultado.eventos;
+        hoy = resultado.fechaActual;
+        eventos = resultado.eventos;
+
 
     //Selecciona los eventos que sean anteriores a la fecha actual del JSON
         for (var i = 0; i > proximos.length; i++){
@@ -29,6 +31,7 @@ $(document).ready(function () {
         return 1;
         }
         return -1;
+
     });
 
     //Crea un string que contenga el HTML que describe el detalle del evento
