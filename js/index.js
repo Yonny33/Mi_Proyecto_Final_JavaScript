@@ -1,4 +1,4 @@
-var pasados = [];
+var proximos = [];
 var hoy;
 var eventos;
 
@@ -15,27 +15,32 @@ $(document).ready(function () {
     eventos = resultado.eventos;
 
     //Selecciona los eventos que sean anteriores a la fecha actual del JSON
-        for (var i = 0; i < eventos.length; i++){
-        if (eventos[i].fecha >hoy){
-        pasados.push(eventos[i]);
+    for(var i = 0; i < eventos.length; i++){
+        if (eventos[i].fecha > hoy){
+          pasados.push(eventos[i]);
         }
-    }
+        else{
+          proximos.push(eventos[i]);
+        }
+      }
 
     //Ordena los eventos segun la fecha (los mas recientes primero)
-    pasados = pasados.sort(function(x,y){
+    proximos = proximos.sort(function(x,y){
         if (x.fecha < y.fecha){
         return 1;
         }
         return -1;
     });
 
+    proximos = proximos.slice(0,2);
+
     //Crea un string que contenga el HTML que describe el detalle del evento
     var html = ""
 
     //Recorre el arreglo y concatena el HTML para cada evento
-        for (var j = 0; j < pasados.length; j++){
+        for (var j = 0; j < proximos.length; j++){
             html += `
-                <a class = "dos-eventos link" href="detalle.html?id=${pasados[j].id}">
+                <a class = "dos-eventos link" href="detalle.html?id=${proximos[j].id}">
                 <h2>${pasados[j].nombre}</h2>
                 <p>${pasados[j].fecha}</p>
                 <p>Lugar: ${pasados[j].lugar}</p
@@ -84,6 +89,9 @@ $(document).ready(function () {
         return -1;
     });
 
+    //Extrae solo dos eventos
+    pasados = pasados.slice(0,2);
+
     //Crea un string que contenga el HTML que describe el detalle del evento
     var html = ""
 
@@ -101,6 +109,5 @@ $(document).ready(function () {
 
     //Modifica el DOM agregando el html generado
     document.getElementById("pasados").innerHTML = html
-
     })
 });
