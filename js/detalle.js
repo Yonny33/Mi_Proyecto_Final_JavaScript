@@ -12,7 +12,6 @@ $(document).ready(function () {
     //Guarda el resultado en una variable
     id = resultado.eventos;
     eventos = resultado.eventos;
-    console.log(eventos);
 
     //Esta es la instruccion para tomar el id del URL detalle.html?id=<identificador>
     var id = location.search.match(/id=(\d)*/)[1]
