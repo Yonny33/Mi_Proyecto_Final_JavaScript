@@ -1,4 +1,6 @@
-// Hemos omitido los acentos en los comentarios por compatibilidad
+var eventos = [];
+var id;
+var detalle;
 
 $(document).ready(function () {
 
@@ -8,7 +10,9 @@ $(document).ready(function () {
   }).done(function (resultado) {
 
     //Guarda el resultado en una variable
+    id = resultado.eventos;
     eventos = resultado.eventos;
+    console.log(eventos);
 
     //Esta es la instruccion para tomar el id del URL detalle.html?id=<identificador>
     var id = location.search.match(/id=(\d)*/)[1]
@@ -17,7 +21,11 @@ $(document).ready(function () {
     evento = eventos.find(function (element) {
       return element.id == id
     });
+
     //Crea un string que contenga el HTML que describe el detalle del evento
+    var html = ""
+
+
     var html = `
                 <h2>${evento.nombre}</h2>
                 <p>${evento.fecha}</p>
