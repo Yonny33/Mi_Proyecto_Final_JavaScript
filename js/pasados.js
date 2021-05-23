@@ -36,15 +36,18 @@ $(document).ready(function () {
 
     //Recorre el arreglo y concatena el HTML para cada evento
         for (var j = 0; j < pasados.length; j++){
-            
-            html +=`
-                <div class="col-12 mb-3 p-3 bg-white evento">
-                <a class = "dos-eventos link" href="detalle.html?id=${pasados[j].id}"> 
-                <h2>${pasados[j].nombre}</h2>
-                <p>${pasados[j].fecha}</p>
-                <p>Lugar: ${pasados[j].lugar}</p
-                <p>Descripción: ${pasados[j].descripcion}</p>
-                <p>Invitados: ${pasados[j].invitados}</p>
+            html += `
+                <div class="col-md-8">
+                <div class="card flex-md-row mb-4  h-md-250">
+                    <div class="card-body d-flex flex-column align-items-start">
+                    <h3 class="mb-0">
+                        <a href="detalle.html?id=${pasados[j].id}">${pasados[j].nombre}</a>
+                    </h3>
+                    <div class="mb-1 text-muted">${pasados[j].fecha}</div>
+                    <p class="card-text mb-auto">${pasados[j].descripcion}
+                    </p>
+                    </div>
+                </div>
                 </div>
                 `
     }
