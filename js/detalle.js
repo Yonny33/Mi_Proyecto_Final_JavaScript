@@ -26,12 +26,14 @@ $(document).ready(function () {
 
 
     var html = `
+                <div class="col-12 mb-3 p-3 bg-white evento">
                 <h2>${evento.nombre}</h2>
                 <p>${evento.fecha}</p>
                 <p>Lugar: ${evento.lugar}</p
                 <p>Descripción: ${evento.descripcion}</p>
                 <p>Costo: ${evento.precio}</p>
                 <p>Invitados: ${evento.invitados}</p>
+                </div>
                 `
 //Modifica el DOM agregando el html generado dentro del div con id=evento
     document.getElementById("evento").innerHTML = html

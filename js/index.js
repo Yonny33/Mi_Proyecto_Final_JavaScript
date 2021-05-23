@@ -15,6 +15,7 @@ $(document).ready(function () {
     eventos = resultado.eventos;
 
     //Selecciona los eventos que sean anteriores a la fecha actual del JSON
+    
     for(var i = 0; i < eventos.length; i++){
         if (eventos[i].fecha > hoy){
           pasados.push(eventos[i]);
@@ -39,13 +40,15 @@ $(document).ready(function () {
 
     //Recorre el arreglo y concatena el HTML para cada evento
         for (var j = 0; j < proximos.length; j++){
-            html += `
+          html += `
+                <div class="col-5 mb-3 p-3 bg-white evento">
                 <a class = "dos-eventos link" href="detalle.html?id=${proximos[j].id}">
                 <h2>${pasados[j].nombre}</h2>
                 <p>${pasados[j].fecha}</p>
                 <p>Lugar: ${pasados[j].lugar}</p
                 <p>Descripción: ${pasados[j].descripcion}</p>
                 <p>Invitados: ${pasados[j].invitados}</p>
+                </div>
                 `
     }
 
@@ -97,13 +100,15 @@ $(document).ready(function () {
 
     //Recorre el arreglo y concatena el HTML para cada evento
         for (var j = 0; j < pasados.length; j++){
-            html += `
+          html += `
+                <div class="col-5 mb-3 p-3 bg-white evento">
                 <a class = "dos-eventos link" href="detalle.html?id=${pasados[j].id}">
                 <h2>${pasados[j].nombre}</h2>
                 <p>${pasados[j].fecha}</p>
                 <p>Lugar: ${pasados[j].lugar}</p
                 <p>Descripción: ${pasados[j].descripcion}</p>
                 <p>Invitados: ${pasados[j].invitados}</p>
+                </div>
                 `
     }
 
