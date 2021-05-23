@@ -36,8 +36,10 @@ $(document).ready(function () {
 
     //Recorre el arreglo y concatena el HTML para cada evento
         for (var j = 0; j < pasados.length; j++){
-            html += `
-                <a class = "dos-eventos link" href="detalle.html?id=${pasados[j].id}">
+            
+            html +=
+                `
+                <a class = "dos-eventos link" href="detalle.html?id=${pasados[j].id}"> 
                 <h2>${pasados[j].nombre}</h2>
                 <p>${pasados[j].fecha}</p>
                 <p>Lugar: ${pasados[j].lugar}</p
