@@ -37,7 +37,7 @@ $(document).ready(function () {
     //Recorre el arreglo y concatena el HTML para cada evento
         for (var j = 0; j < proximos.length; j++){
             html += `
-                <div class="col-md-8">
+                <div class="col-md-8 offset-md-2">
                 <div class="card flex-md-row mb-4  h-md-250">
                     <div class="card-body d-flex flex-column align-items-start">
                     <h3 class="mb-0">

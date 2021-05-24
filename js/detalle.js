@@ -25,7 +25,7 @@ $(document).ready(function () {
     var html = ""
 
           html += `
-                <div class="col-md-8">
+                <div class="col-md-8 offset-md-2">
                   <div class="card flex-md-row mb-4  h-md-250">
                     <div class="card-body d-flex flex-column align-items-start">
                     <h2>${evento.nombre}</h2>
